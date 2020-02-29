@@ -1,0 +1,37 @@
+= Digital Combat Simulator
+
+== My projects
+
+Some DCS related things I have made:
+
+* https://github.com/bjanders/dcs-api[Digital Combat Simulator API
+information] The purpose of this is to pull information on the controls and
+gaugues of the aircraft directly from the LUA source files of DCS and
+collecting it in structured JSON files with minimal manual work. This
+information can then be utilized in client and server software for
+integrating with DCS, for example, if you want to make real controllers
+and gauges for DCS, or build a complete cockit. No software for doing the
+actual integration is here.
+* https://github.com/bjanders/dcs-master[Digital Combat Simulator cockpit
+integration server] This is a "plugin" for DCS through which you can
+easily control every single switch and get the information from every
+single gauge from any aircraft. This builds on the API information in
+the project mentioned above. If the information is in the API, then it
+provides extended functionality, but even if the information is not yet
+extraicted you can still control the aircraft and get gauge information.
+This is just a server with a simple protocol so that you can easily
+make your own client the way you want.
+* https://github.com/bjanders/fpanels[Go library for interacting with
+Logitech/Saitek flight panels] Not strictly a DCS specific project,
+but can be used with DCS related projects. This is a Go library through
+which can interact with the Locitech/Saitek flight panels. All switches and
+displays and LEDs can be controlled. It's just a library, not an application
+(although it contains a couple of test applications).
+* https://github.com/bjanders/dcs-master-panels[Logitech/Saitek flight
+panels for DCS] With this application you can use the Logitech/Saitek
+flight panels with DCS. It uses the https://github.com/bjanders/fpanels[Go
+library] mentioned above to connect to the panels and talks to DCS the
+https://github.com/bjanders/dcs-master[DCS server] also mentioned above. You
+can make your own routing rules so that you can route any switch to any
+control in any plane and route any information from any plane to any
+display on the panels. Documentation is still a bit lacking unfortunately.

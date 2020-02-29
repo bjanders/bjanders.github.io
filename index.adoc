@@ -1,0 +1,3 @@
+= My Random Pages
+
+* link:dcs/dcs.html[Digital Combat Simulator related stuff]
