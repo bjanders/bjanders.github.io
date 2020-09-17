@@ -2,8 +2,8 @@ SUBDIRS = dcs music
 
 all: index.html $(SUBDIRS)
 
-index.html: index.adoc
-	asciidoctor index.adoc
+%.html: %.adoc
+	asciidoctor $<
 
 subdirs: $(SUBDIRS)
 
