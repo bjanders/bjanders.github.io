@@ -1,2 +1,5 @@
-dcs.html: dcs.adoc
-	asciidoctor dcs.adoc
+all: dcs.html
+
+%.html: %.adoc
+	asciidoctor $<
+
