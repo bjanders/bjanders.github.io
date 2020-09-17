@@ -1,8 +1,8 @@
-= Behringer Neutron =
+= Behringer Neutron
 
 This page contains some oscilloscope views on the Behringer Neutron and interesting findings.
 
-== Envelope levels ==
+== Envelope levels
 
 The envelope peak of the attack level is lower than the maximum sustain level. I would have expected that the peak of the attack would be equal to the maximum sustain level, and thus that it would make no difference where you set the decay when the sustain is at max. But this is not the case, as the following oscilloscope outputs show.
 
@@ -24,7 +24,7 @@ According to the manual, the envelope outputs max +9V.
 
 Both envelope 1 and 2 behave identically.
 
-== Attenuator 1 output ==
+== Attenuator 1 output
 
 According to the manual, this is the default attenuator flow:
 
@@ -35,3 +35,13 @@ Since the unipolar output is according to the manual 0V to +5V, one would expect
 image::att1.png[ATT output]
 
 I assume this is a bug in the manual, and that the diagram should say bipolar LFO instead. This does not however explain the wide voltage range, which I would then have expected to be -5V to +5V.
+
+== LFO outputs
+
+Teh unipolar output looks as expected, and goes between 0V and +5V.
+
+image::unipolar-lfo.png[Unipolar LFO]
+
+Unfortunately the following image does not contain the minimum value, but it can be seen that the output is biased towards the negative side, like with the bipolar output of the default ATT1 routing.
+
+image::bipolar-lfo.png[Bipolar LFO]
