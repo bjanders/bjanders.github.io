@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>My Random Pages</title>
+<title>Behringer Neutron</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,23 +438,85 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>My Random Pages</h1>
+<h1>Behringer Neutron</h1>
 </div>
 <div id="content">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="dcs/dcs.html">Digital Combat Simulator related stuff</a></p>
-</li>
-<li>
-<p><a href="music/neutron/neutron.html">Behringer Neutron</a></p>
-</li>
-</ul>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page contains some oscilloscope views on the Behringer Neutron and interesting findings.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_envelope_levels">Envelope levels</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The envelope peak of the attack level is lower than the maximum sustain level. I would have expected that the peak of the attack would be equal to the maximum sustain level, and thus that it would make no difference where you set the decay when the sustain is at max. But this is not the case, as the following oscilloscope outputs show.</p>
+</div>
+<div class="paragraph">
+<p>In the following image, the sustain is at about in the middle. The peak of the attack goes to +8.2V.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="long-decay-half-sustain.png" alt="Long decay" width="half sustain">
+</div>
+</div>
+<div class="paragraph">
+<p>Here the sustain as at the full level, which goes to 9.6V. The decay is kept at the same level as in the previous picture. Notice that the decay is now an raise instead of decay.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="long-decay-full-sustain.png" alt="Long decay" width="full sustain">
+</div>
+</div>
+<div class="paragraph">
+<p>Turning down the decay to minimum, there is an immidate raise from +8.2V to +9.6V.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="no-decay-full-sustain.png" alt="No decay" width="full sustain">
+</div>
+</div>
+<div class="paragraph">
+<p>In other words, it always makes a difference at what level you have the decay, except if the sustain is set to about +8.2V.</p>
+</div>
+<div class="paragraph">
+<p>According to the manual, the envelope outputs max +9V.</p>
+</div>
+<div class="paragraph">
+<p>Both envelope 1 and 2 behave identically.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_attenuator_1_output">Attenuator 1 output</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>According to the manual, this is the default attenuator flow:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="attenuator1-flow.png" alt="Attenuator 1 flow">
+</div>
+</div>
+<div class="paragraph">
+<p>Since the unipolar output is according to the manual 0V to +5V, one would expect that the output of ATT1 would be 0V to +5V if both the Attenuator 1 and 2 knobs are turned to max. It turns out, that the output at ATT1 is instead a bipolar signal in the range -8.8V to +7.8V.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="att1.png" alt="ATT output">
+</div>
+</div>
+<div class="paragraph">
+<p>I assume this is a bug in the manual, and that the diagram should say bipolar LFO instead. This does not however explain the wide voltage range, which I would then have expected to be -5V to +5V.</p>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-09-17 23:02:49 +0300
+Last updated 2020-09-17 22:50:23 +0300
 </div>
 </div>
 </body>
