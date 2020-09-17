@@ -18,19 +18,19 @@ easily control every single switch and get the information from every
 single gauge from any aircraft. This builds on the API information in
 the project mentioned above. If the information is in the API, then it
 provides extended functionality, but even if the information is not yet
-extraicted you can still control the aircraft and get gauge information.
+extracted then you can still control the aircraft and get gauge information.
 This is just a server with a simple protocol so that you can easily
 make your own client the way you want.
 * https://github.com/bjanders/fpanels[Go library for interacting with
 Logitech/Saitek flight panels] Not strictly a DCS specific project,
 but can be used with DCS related projects. This is a Go library through
-which can interact with the Locitech/Saitek flight panels. All switches and
+which you can interact with the Locitech/Saitek flight panels. All switches and
 displays and LEDs can be controlled. It's just a library, not an application
 (although it contains a couple of test applications).
 * https://github.com/bjanders/dcs-master-panels[Logitech/Saitek flight
 panels for DCS] With this application you can use the Logitech/Saitek
 flight panels with DCS. It uses the https://github.com/bjanders/fpanels[Go
-library] mentioned above to connect to the panels and talks to DCS the
+library] mentioned above to connect to the panels and talks to DCS via the
 https://github.com/bjanders/dcs-master[DCS server] also mentioned above. You
 can make your own routing rules so that you can route any switch to any
 control in any plane and route any information from any plane to any
