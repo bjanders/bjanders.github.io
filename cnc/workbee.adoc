@@ -1,0 +1,121 @@
+= Ooznest WorkBee
+
+.Stepper outputs
+|===
+| Z  | Z-zxis
+| Y  | Left Y-axis
+| X  | X-axis
+| E0 | Right Y-axis
+| E1 | Unused
+|===
+
+.Heater outputs
+|===
+| H0 (E0) | 
+| H1 (E1) | LED light ring
+|===
+
+.Endstops
+|===
+| Z  | Z-axis 
+| Y  | Y-axis
+| X  | X-axis
+| E0 | Touch probe
+| E1 | Emergency stop
+|===
+
+* 2 always on fans
+* 3 PWM fans
+* High current heated bed output
+* Bed thermistor
+
+
+== G-codes
+
+https://duet3d.dozuki.com/Wiki/Gcode
+
+=== Coordinate systems
+
+|===
+| G53 | Use machine coordinates
+| G54 | Use coordinate system 1
+| ... |
+| G59 | Use coordinate system 6
+|===
+
+Initially coordinate system 1 is in use
+
+|===
+| G10 L2 Ps Xx Yy Zz |  Set coordinate system origin for coordinate system s
+| G10 L20 Ps Xx Yy Z| Set coordinate system relative to current position
+| G92 | Set Position
+|===
+
+=== Homing
+
+|===
+| G28 [X] [Y] [Z] | Home
+|===
+
+When homing is perfmored the following scripts are run:
+
+* homeall.g
+* homex.g
+* homey.g
+* homez.g
+
+=== Mesh compensation
+
+Trigger height:: The height where the probe triggers and is equal to zero for real, i.e., offset between probe and Z=0. 
+So if the probe triggers by touching the surface, then trigger height should be 0.
+
+Trigger height is set with G31. Before using G31, M558 (Set Z probe type) must be run.
+
+==== Checking trigger height
+
+. `M561` Cancel bed compensation
+. (`M208  S1 Z-3`) allow Z moves down to -3mm
+. Move head to probing pos
+. Move down until touch
+. `G92 Z0`: Sets current height as Z=0
+. `G1 Z5`: Move up 5mm
+. `G30 S-1`: Probe without resetting the Z=0 pos
+. Read the Z height from the web interface. That is the trigger height.
+
+==== Probing
+
+. `M561` Cancel bed compensation
+. `M558` Set Z probe type
+.. Manual probing: `M558 P0 [Hnnn]`  (Possibly set dive height Hnnn)
+.. Touch probe: `M558 P4 I1 F100 H2` (100 mm/min)
+*** `P4`: selects a switch for bed probing, default 3 (set with `C`) which is endstop E0 on the Duet
+*** `I1`: Invert reading
+*** `F100`: feed rate 100 mm/min
+*** `H2`: Dive height, 2 mm
+. `G31 Z0`: Trigger height 0
+. `M557` Define mesh size and spacing
+.. `M557` Xaaa:bbb Yaaa:bbb Pnn
+*** `aaa:bbb` min:max
+*** `Pnn` Number of points 
+. Move to center, do `G3`, to establish Z=0
+. `G29`: Start probing
+
+== Custom changes 
+
+`pause.g` changed to not home, just lift up.
+
+.pause.g
+----
+G1 H1 Z1500 F1500 ; raise the Z to the highest position
+----
+
+In `workzero.g` remove the go the Z zero position. It is way too easy to hit the "Go to work zero" button in the web UI, which might cause your router to hit the work material.
+
+.workzero.g
+----
+; called GO TO WORK ZERO is pressed in WorkBee Control
+
+G1 H1 Z1500 F1500 ; raise the Z to the highest position
+G1 X0 Y0 F1500 ; go directly above the work zero position
+----
+
