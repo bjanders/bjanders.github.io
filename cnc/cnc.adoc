@@ -1,0 +1,47 @@
+= CNC
+
+== Makita RT0700C
+
+.Speed settings
+|===
+| No | RPM
+
+| 1 | 10000
+| 2 | 12000
+| 3 | 17000
+| 4 | 22000
+| 5 | 27000
+| 6 | 30000
+|===
+
+The manual recommends not to cut more than 3mm at a time when cutting grooves.
+
+== Feeds and speeds
+
+The following data is based on my experience with a 1000mm x1000 mm WorkBee CNC and a Makita RT0700C router.
+
+=== Acrylic
+
+* 17000 RPM
+* Feed rate: 2590 mm/min (102 in/min)
+Feed per tooth: 0.0762 mm (0.003 in)
+
+
+For cutting acrylic I have found ~17000 RPM works the best. A slower RPM will melt the acrylic. I've used a feed rate of 2590 mm/min (102 in/min). A faster feed rate may work better. With a 6,35mm (1/4") two flute end mill the feeds and speeds are not that important. With smaller end mills, e.g., 1/8", it is important to get it right.
+
+=== MDF
+
+* 20000 RPM
+* Feed rate: 3048 mm/min (120 in/min)
+* Feed per tooth: 0.0762 mm (0.003 in)
+
+20000 RPM has worked well for me, but I've seen recommendations for a lower RPM.
+
+Cutting 3mm per depth works well.
+
+=== Aluminium
+
+* 10000 RPM
+* Feed rate 920 mm/min
+* Feed per tooth 0.046 mm
+

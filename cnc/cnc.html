@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<title>My Random Pages</title>
+<title>CNC</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -419,26 +419,123 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>My Random Pages</h1>
+<h1>CNC</h1>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_makita_rt0700c">Makita RT0700C</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Speed settings</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">No</th>
+<th class="tableblock halign-left valign-top">RPM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30000</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The manual recommends not to cut more than 3mm at a time when cutting grooves.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_feeds_and_speeds">Feeds and speeds</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following data is based on my experience with a 1000mm x1000 mm WorkBee CNC and a Makita RT0700C router.</p>
+</div>
+<div class="sect2">
+<h3 id="_acrylic">Acrylic</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="dcs/dcs.html">Digital Combat Simulator related stuff</a></p>
+<p>17000 RPM</p>
 </li>
 <li>
-<p><a href="cnc/cnc.html">CNC</a></p>
+<p>Feed rate: 2590 mm/min (102 in/min)
+Feed per tooth: 0.0762 mm (0.003 in)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For cutting acrylic I have found ~17000 RPM works the best. A slower RPM will melt the acrylic. I&#8217;ve used a feed rate of 2590 mm/min (102 in/min). A faster feed rate may work better. With a 6,35mm (1/4") two flute end mill the feeds and speeds are not that important. With smaller end mills, e.g., 1/8", it is important to get it right.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mdf">MDF</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>20000 RPM</p>
 </li>
 <li>
-<p><a href="music/neutron/neutron.html">Behringer Neutron</a></p>
+<p>Feed rate: 3048 mm/min (120 in/min)</p>
+</li>
+<li>
+<p>Feed per tooth: 0.0762 mm (0.003 in)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>20000 RPM has worked well for me, but I&#8217;ve seen recommendations for a lower RPM.</p>
+</div>
+<div class="paragraph">
+<p>Cutting 3mm per depth works well.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aluminium">Aluminium</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>10000 RPM</p>
+</li>
+<li>
+<p>Feed rate 920 mm/min</p>
+</li>
+<li>
+<p>Feed per tooth 0.046 mm</p>
 </li>
 </ul>
 </div>
 </div>
+</div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-29 20:30:38 EET
+Last updated 2020-10-28 22:01:19 EET
 </div>
 </div>
 </body>

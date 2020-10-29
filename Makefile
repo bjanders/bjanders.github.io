@@ -1,4 +1,4 @@
-SUBDIRS = dcs music
+SUBDIRS = dcs music cnc
 
 all: index.html $(SUBDIRS)
 
