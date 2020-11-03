@@ -1,5 +1,7 @@
 = CNC
 
+See also my notes on using the <<workbee.adoc,Ooznest WorkBee>>.
+
 == Makita RT0700C
 
 .Speed settings

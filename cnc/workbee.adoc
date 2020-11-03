@@ -2,26 +2,32 @@
 
 .Stepper outputs
 |===
-| Z  | Z-zxis
-| Y  | Left Y-axis
-| X  | X-axis
-| E0 | Right Y-axis
-| E1 | Unused
+| Duet | G-code | WorkBee
+
+| X  | 0 | X-axis
+| Y  | 1 | Left Y-axis
+| Z  | 2 | Z-zxis
+| E0 | 3 | Right Y-axis
+| E1 | 4 | Unused
 |===
 
 .Heater outputs
 |===
-| H0 (E0) | 
-| H1 (E1) | LED light ring
+| Duet | G-code | WorkBee
+
+| H0 (E0) | ? |
+| H1 (E1) | ? | Optional LED light ring
 |===
 
 .Endstops
 |===
-| Z  | Z-axis 
-| Y  | Y-axis
-| X  | X-axis
-| E0 | Touch probe
-| E1 | Emergency stop
+| Duet | G-code | WorkBee
+
+| X  | 0? | X-axis
+| Y  | 1? | Y-axis
+| Z  | 2? | Z-axis 
+| E0 | 3 | Optional touch probe
+| E1 | 4 | Optional emergency stop
 |===
 
 * 2 always on fans
@@ -36,25 +42,43 @@ https://duet3d.dozuki.com/Wiki/Gcode
 
 === Coordinate systems
 
+.Select coordinate system commands
 |===
-| G53 | Use machine coordinates
-| G54 | Use coordinate system 1
-| ... |
-| G59 | Use coordinate system 6
+| G53   | Use machine coordinates for the remainder of the current line
+| G54   | Use coordinate system 1
+| ...   |
+| G59   | Use coordinate system 6
+| G19.1 | Use coordinate system 7
+| G19.2 | Use coordinate system 8
+| G19.3 | Use coordinate system 9
 |===
 
-Initially coordinate system 1 is in use
+Initially coordinate system 1 is in use, which is the work coordinate system shown in the web UI.
 
+.Define coordinate system commands
 |===
-| G10 L2 Ps Xx Yy Zz |  Set coordinate system origin for coordinate system s
-| G10 L20 Ps Xx Yy Z| Set coordinate system relative to current position
-| G92 | Set Position
+| G10 L2 Ps Xx Yy Zz | Set coordinate system _Ps_ origin relative to machine coordinate system.
+| G10 L20 Ps Xx Yy Zz| Set coordinate system _Ps_ origin relative to current tool.
+| G92 Xx Yy Zn | Sets machine cooridinate system origin relative to the current tool.
+| G30 | Z-probe at the current XY position and set the _machine Z-coordinate_ to zero at the trigger height. Machine moves up 5mm after the probe. Set probe type with M558 first.
+|===
+
+=== Tools
+
+.Tool management commands
+|===
+| Tn                | Select tool _Tn_. T-1 removes all tools. The tool must be defined with M563 before it can be selected.
+| M563 Pn S"name"   | Define tool 
+| G10 Pn Xx Yy Zz   | Set offset for tool _Pn_
+| M585 Xx Yy Zz En Ln Fn Sn Rn | Probe offset for current tool
+| G30 S-2           | Set Z offset of current tool to make the current position Z=0
 |===
 
 === Homing
 
+.Homming commands
 |===
-| G28 [X] [Y] [Z] | Home
+| G28 [X] [Y] [Z] | Home X/Y/Z. Without parameters, home all.
 |===
 
 When homing is perfmored the following scripts are run:
@@ -66,10 +90,10 @@ When homing is perfmored the following scripts are run:
 
 === Mesh compensation
 
-Trigger height:: The height where the probe triggers and is equal to zero for real, i.e., offset between probe and Z=0. 
+Trigger height:: The height where the probe triggers and is equal to zero for real, i.e., offset between probe and tool/head at Z=0.
 So if the probe triggers by touching the surface, then trigger height should be 0.
 
-Trigger height is set with G31. Before using G31, M558 (Set Z probe type) must be run.
+Trigger height is set with G31. Before using G31, M558 (Set Z probe type) must be set.
 
 ==== Checking trigger height
 
@@ -84,9 +108,26 @@ Trigger height is set with G31. Before using G31, M558 (Set Z probe type) must b
 
 ==== Probing
 
+.Probing commands
+|===
+| M558 Pnnn Fnnn Hnnn Innn Rnnn Tnnn Annn Snnn Cn | Set Z-probe type 
+| G31 Znnn | Set Z-probe trigger height to _Znnn_ 
+| G30 Pnnn Xnnn Ynn Znnn Hnnn Snnn |  Single Z-probe
+|===
+
+.Defining the probe type M558
+|===
+| M558 P0 | Manual probe
+| M558 P4 I1 F100 H2 | Touch probe
+|===
+
+
+. *Important*: Move to your XYZ zero and run `G92 X0 Y0 Z0`. This resets the machine coordinates, which are used by the mesh compensation. Unfortunately it does not use the work coordinates. This is important, otherwise you will crash your router when it tries to go below your waste board where the Z zero position normally is.
 . `M561` Cancel bed compensation
-. `M558` Set Z probe type
-.. Manual probing: `M558 P0 [Hnnn]`  (Possibly set dive height Hnnn)
+. `M558` Set Z probe type:
+.. Manual probing: `M558 P0 [Hnnn]`
+*** `P0`: No probe present. You will be promted to manually move the router until it touches your material
+*** `Hnnn` Possibly set dive height in mm, e.g., H2 is 2mm 
 .. Touch probe: `M558 P4 I1 F100 H2` (100 mm/min)
 *** `P4`: selects a switch for bed probing, default 3 (set with `C`) which is endstop E0 on the Duet
 *** `I1`: Invert reading
@@ -102,12 +143,24 @@ Trigger height is set with G31. Before using G31, M558 (Set Z probe type) must b
 
 == Custom changes 
 
-`pause.g` changed to not home, just lift up.
+
+Reduce Z max height so that your router wihtout a tool can't hit the waste board.
+
+.customconfig.g
+----
+M208 Z70 S0 		; Set max Z to 70
+----
+
+
+=== Pause
+`pause.g` changed to not home, just lift up:
 
 .pause.g
 ----
 G1 H1 Z1500 F1500 ; raise the Z to the highest position
 ----
+
+=== Workzero
 
 In `workzero.g` remove the go the Z zero position. It is way too easy to hit the "Go to work zero" button in the web UI, which might cause your router to hit the work material.
 
@@ -119,3 +172,6 @@ G1 H1 Z1500 F1500 ; raise the Z to the highest position
 G1 X0 Y0 F1500 ; go directly above the work zero position
 ----
 
+== Errors on Gcode page
+
+*  "This code works similarly to G1 .. S1" 

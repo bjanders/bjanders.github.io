@@ -446,28 +446,41 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Stepper outputs</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Duet</th>
+<th class="tableblock halign-left valign-top">G-code</th>
+<th class="tableblock halign-left valign-top">WorkBee</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Z</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Z-zxis</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Left Y-axis</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">X-axis</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Left Y-axis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Z</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Z-zxis</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">E0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Right Y-axis</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">E1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
 </tr>
 </tbody>
@@ -475,46 +488,69 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Heater outputs</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Duet</th>
+<th class="tableblock halign-left valign-top">G-code</th>
+<th class="tableblock halign-left valign-top">WorkBee</th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">H0 (E0)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">H1 (E1)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LED light ring</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional LED light ring</p></td>
 </tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 3. Endstops</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Duet</th>
+<th class="tableblock halign-left valign-top">G-code</th>
+<th class="tableblock halign-left valign-top">WorkBee</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Z</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Z-axis</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Y-axis</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0?</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">X-axis</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y-axis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Z</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Z-axis</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">E0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Touch probe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional touch probe</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">E1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Emergency stop</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional emergency stop</p></td>
 </tr>
 </tbody>
 </table>
@@ -545,6 +581,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_coordinate_systems">Coordinate systems</h3>
 <table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Select coordinate system commands</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -552,7 +589,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">G53</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use machine coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use machine coordinates for the remainder of the current line</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">G54</p></td>
@@ -566,12 +603,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">G59</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Use coordinate system 6</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G19.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use coordinate system 7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G19.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use coordinate system 8</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G19.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use coordinate system 9</p></td>
+</tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Initially coordinate system 1 is in use</p>
+<p>Initially coordinate system 1 is in use, which is the work coordinate system shown in the web UI.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Define coordinate system commands</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -579,15 +629,51 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">G10 L2 Ps Xx Yy Zz</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Set coordinate system origin for coordinate system s</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set coordinate system <em>Ps</em> origin relative to machine coordinate system.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">G10 L20 Ps Xx Yy Z</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Set coordinate system relative to current position</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G10 L20 Ps Xx Yy Zz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set coordinate system <em>Ps</em> origin relative to current tool.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">G92</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Set Position</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G92 Xx Yy Zn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets machine cooridinate system origin relative to the current tool.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Z-probe at the current XY position and set the <em>machine Z-coordinate</em> to zero at the trigger height. Machine moves up 5mm after the probe. Set probe type with M558 first.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_tools">Tools</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Tool management commands</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select tool <em>Tn</em>. T-1 removes all tools. The tool must be defined with M563 before it can be selected.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M563 Pn S"name"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define tool</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G10 Pn Xx Yy Zz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set offset for tool <em>Pn</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M585 Xx Yy Zz En Ln Fn Sn Rn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Probe offset for current tool</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G30 S-2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set Z offset of current tool to make the current position Z=0</p></td>
 </tr>
 </tbody>
 </table>
@@ -595,6 +681,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_homing">Homing</h3>
 <table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Homming commands</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -602,7 +689,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">G28 [X] [Y] [Z]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Home</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Home X/Y/Z. Without parameters, home all.</p></td>
 </tr>
 </tbody>
 </table>
@@ -632,13 +719,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <dl>
 <dt class="hdlist1">Trigger height</dt>
 <dd>
-<p>The height where the probe triggers and is equal to zero for real, i.e., offset between probe and Z=0.
+<p>The height where the probe triggers and is equal to zero for real, i.e., offset between probe and tool/head at Z=0.
 So if the probe triggers by touching the surface, then trigger height should be 0.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>Trigger height is set with G31. Before using G31, M558 (Set Z probe type) must be run.</p>
+<p>Trigger height is set with G31. Before using G31, M558 (Set Z probe type) must be set.</p>
 </div>
 <div class="sect3">
 <h4 id="_checking_trigger_height">Checking trigger height</h4>
@@ -673,17 +760,68 @@ So if the probe triggers by touching the surface, then trigger height should be 
 </div>
 <div class="sect3">
 <h4 id="_probing">Probing</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. Probing commands</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M558 Pnnn Fnnn Hnnn Innn Rnnn Tnnn Annn Snnn Cn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set Z-probe type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G31 Znnn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set Z-probe trigger height to <em>Znnn</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G30 Pnnn Xnnn Ynn Znnn Hnnn Snnn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single Z-probe</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. Defining the probe type M558</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M558 P0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manual probe</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M558 P4 I1 F100 H2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Touch probe</p></td>
+</tr>
+</tbody>
+</table>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p><strong>Important</strong>: Move to your XYZ zero and run <code>G92 X0 Y0 Z0</code>. This resets the machine coordinates, which are used by the mesh compensation. Unfortunately it does not use the work coordinates. This is important, otherwise you will crash your router when it tries to go below your waste board where the Z zero position normally is.</p>
+</li>
 <li>
 <p><code>M561</code> Cancel bed compensation</p>
 </li>
 <li>
-<p><code>M558</code> Set Z probe type</p>
+<p><code>M558</code> Set Z probe type:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Manual probing: <code>M558 P0 [Hnnn]</code>  (Possibly set dive height Hnnn)</p>
+<p>Manual probing: <code>M558 P0 [Hnnn]</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>P0</code>: No probe present. You will be promted to manually move the router until it touches your material</p>
+</li>
+<li>
+<p><code>Hnnn</code> Possibly set dive height in mm, e.g., H2 is 2mm</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Touch probe: <code>M558 P4 I1 F100 H2</code> (100 mm/min)</p>
@@ -746,7 +884,18 @@ So if the probe triggers by touching the surface, then trigger height should be 
 <h2 id="_custom_changes">Custom changes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>pause.g</code> changed to not home, just lift up.</p>
+<p>Reduce Z max height so that your router wihtout a tool can&#8217;t hit the waste board.</p>
+</div>
+<div class="listingblock">
+<div class="title">customconfig.g</div>
+<div class="content">
+<pre>M208 Z70 S0 		; Set max Z to 70</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pause">Pause</h3>
+<div class="paragraph">
+<p><code>pause.g</code> changed to not home, just lift up:</p>
 </div>
 <div class="listingblock">
 <div class="title">pause.g</div>
@@ -754,6 +903,9 @@ So if the probe triggers by touching the surface, then trigger height should be 
 <pre>G1 H1 Z1500 F1500 ; raise the Z to the highest position</pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_workzero">Workzero</h3>
 <div class="paragraph">
 <p>In <code>workzero.g</code> remove the go the Z zero position. It is way too easy to hit the "Go to work zero" button in the web UI, which might cause your router to hit the work material.</p>
 </div>
@@ -769,9 +921,22 @@ G1 X0 Y0 F1500 ; go directly above the work zero position</pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_errors_on_gcode_page">Errors on Gcode page</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>"This code works similarly to G1 .. S1"</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-29 21:38:32 +0200
+Last updated 2020-11-03 11:48:14 +0200
 </div>
 </div>
 </body>
