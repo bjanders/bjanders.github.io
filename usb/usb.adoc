@@ -1,0 +1,13 @@
+= USB
+
+== General links
+
+* https://www.usb.org/document-library/hid-descriptor-tool[HID Descriptor Tool]
+* https://beyondlogic.org/usbnutshell/usb1.shtml[USB in a NutShell]
+* https://www.usbmadesimple.co.uk/ums_1.htm[USB Made Simple]
+
+== Arduino related
+
+* https://www.arduino.cc/en/Reference/HID[HID library]
+* https://github.com/arduino/Arduino/wiki/PluggableUSB-and-PluggableHID-howto[PluggableUSB and PluggableHID howto]
+* https://github.com/NicoHood/HID[NicoHood's HID libary]

@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<title>My Random Pages</title>
+<title>Arduino</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -419,29 +419,115 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>My Random Pages</h1>
+<h1>Arduino</h1>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_settings_and_configuration_files">Settings and configuration files</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="dcs/dcs.html">Digital Combat Simulator related stuff</a></p>
+<p>Arduino settings are in</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Windows: C:\Users\&lt;username&gt;\AppData\Local\Arduino15</p>
 </li>
 <li>
-<p><a href="cnc/cnc.html">CNC</a></p>
+<p>Linux: ~/.arduino15</p>
 </li>
 <li>
-<p><a href="music/neutron/neutron.html">Behringer Neutron</a></p>
+<p>macOS: /Users/&lt;username&gt;/Library/Arduino15</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="https://support.arduino.cc/hc/en-us/articles/360018448279-Where-can-I-find-the-Arduino15-folder-">Where can I find the Arduino15 folder?</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hardware_files">Hardware files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="https://arduino.github.io/arduino-cli/latest/platform-specification/">Platform specification</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>boards.txt</p>
 </li>
 <li>
-<p><a href="usb/usb.html">USB</a></p>
+<p>platform.txt</p>
+</li>
+<li>
+<p>avrdude.conf</p>
+</li>
+<li>
+<p>bootloaders/</p>
+</li>
+<li>
+<p>driver/ - .inf files for Windows</p>
+</li>
+<li>
+<p>libraries/</p>
+</li>
+<li>
+<p>variants/</p>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;variant&gt;/pins_arduino.h</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_boards_txt">boards.txt</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>name</p>
+</li>
+<li>
+<p>vid/pid</p>
+</li>
+<li>
+<p>upload</p>
+</li>
+<li>
+<p>bootloader</p>
+</li>
+<li>
+<p>build</p>
 </li>
 </ul>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_build_process">Build process</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://atadiat.com/en/e-arduino-core-source-files-make-new-core-building-steps/">A Tour Inside Arduino Core: Source Files, How to Make A New Core and Arduino Building Steps</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-02-21 11:23:14 EET
+Last updated 2021-03-12 19:23:05 EET
 </div>
 </div>
 </body>

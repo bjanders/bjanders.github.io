@@ -1,0 +1,35 @@
+= Arduino
+
+== Settings and configuration files
+
+* Arduino settings are in
+** Windows: C:\Users\<username>\AppData\Local\Arduino15
+** Linux: ~/.arduino15
+** macOS: /Users/<username>/Library/Arduino15
+
+See https://support.arduino.cc/hc/en-us/articles/360018448279-Where-can-I-find-the-Arduino15-folder-[Where can I find the Arduino15 folder?] 
+
+== Hardware files
+
+See https://arduino.github.io/arduino-cli/latest/platform-specification/[Platform specification]
+
+* boards.txt
+* platform.txt
+* avrdude.conf
+* bootloaders/
+* driver/ - .inf files for Windows
+* libraries/
+* variants/
+** <variant>/pins_arduino.h
+
+=== boards.txt
+
+* name
+* vid/pid
+* upload
+* bootloader
+* build
+
+== Build process
+
+* https://atadiat.com/en/e-arduino-core-source-files-make-new-core-building-steps/[A Tour Inside Arduino Core: Source Files, How to Make A New Core and Arduino Building Steps]

@@ -1,0 +1,6 @@
+= Go libraries
+
+== Serial port implementations
+
+* https://github.com/jacobsa/go-serial
+* https://github.com/bugst/go-serial
