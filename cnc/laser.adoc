@@ -1,0 +1,10 @@
+Laser speeds
+
+* Burning black spray paint on white acrylic: 2500/20
+* Outlining on MDF: 2500/100
+* Cutting blue masking tape: 800/100
+
+Laser offset:
+
+X106.0
+Y-7.3

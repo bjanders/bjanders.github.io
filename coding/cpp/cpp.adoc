@@ -1,0 +1,16 @@
+== Coding guidelines and style
+
+* https://www.stroustrup.com/bs_faq2.html[Bjarne Stroustrup's C++ Style and Technique FAQ]
+* https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md[Standard C++ Foundation C++ Core Guidelines]
+* https://style-guides.readthedocs.io/en/latest/cpp.html
+
+Variable names:
+
+* Use underscore, e.g. `partial_sum`
+* Don't use names with all caps (they are reserved for macros)
+* Use an initial capital letter for types (e.g. Square and Graph)
+* Don't use variable names starting with an underscore, e.g., for member variables
+
+Declaration:
+
+* Use `int* p` (not `int *p`, which is fine in plain C)

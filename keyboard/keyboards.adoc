@@ -1,0 +1,12 @@
+== Key spacing and size
+
+Keys are spaced 19mm CC.
+
+* https://pubmed.ncbi.nlm.nih.gov/23829030/
+
+== Links
+
+* https://thekeeblog.com/[The Keeblog]
+* https://www.reddit.com/r/ergog[Reddit Ergonomic Mechanical Keyboards]
+* https://www.reddit.com/r/MechanicalKeyboards/[Reddit Mechanical Keyboards]
+* https://mechlounge.com/interesting-ortho-ergo-keyboards/[Interesting Ortho & Ergo Keyboards]
