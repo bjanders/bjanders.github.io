@@ -4,6 +4,10 @@ Keys are spaced 19mm CC.
 
 * https://pubmed.ncbi.nlm.nih.gov/23829030/
 
+== Hardware
+
+* Hotswap sockets: Mill-Max 7305, 0305, 3305
+
 == Links
 
 * https://thekeeblog.com/[The Keeblog]
