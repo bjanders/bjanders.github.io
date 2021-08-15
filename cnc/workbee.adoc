@@ -60,7 +60,7 @@ Initially coordinate system 1 is in use, which is the work coordinate system sho
 | G10 L2 Ps Xx Yy Zz | Set coordinate system _Ps_ origin relative to machine coordinate system.
 | G10 L20 Ps Xx Yy Zz| Set coordinate system _Ps_ origin relative to current tool.
 | G92 Xx Yy Zn | Sets machine cooridinate system origin relative to the current tool.
-| G30 | Z-probe at the current XY position and set the _machine Z-coordinate_ to zero at the trigger height. Machine moves up 5mm after the probe. Set probe type with M558 first.
+| G30 | Z-probe at the current XY position and set the _machine Z-origin_ to zero at the trigger height. Machine moves up 5mm after the probe. Set probe type with M558 first.
 |===
 
 === Tools
@@ -88,38 +88,28 @@ When homing is perfmored the following scripts are run:
 * homey.g
 * homez.g
 
+
+=== Probing
+
+.Probing commands
+|===
+| M558 Pnnn Fnnn Hnnn Innn Rnnn Tnnn Annn Snnn Cn | Set Z-probe type 
+| G31 Znnn | Set Z-probe trigger height to _Znnn_ 
+| G30 Pnnn Xnnn Ynn Znnn Hnnn Snnn |  Single Z-probe. Sets the _machine Z-origin_.
+|===
+
+.Defining the probe type M558
+|===
+| M558 P0    | Manual probe
+| M558 P4 I1 | Touch probe
+|===
+
 === Mesh compensation
 
 Trigger height:: The height where the probe triggers and is equal to zero for real, i.e., offset between probe and tool/head at Z=0.
 So if the probe triggers by touching the surface, then trigger height should be 0.
 
 Trigger height is set with G31. Before using G31, M558 (Set Z probe type) must be set.
-
-==== Checking trigger height
-
-. `M561` Cancel bed compensation
-. (`M208  S1 Z-3`) allow Z moves down to -3mm
-. Move head to probing pos
-. Move down until touch
-. `G92 Z0`: Sets current height as Z=0
-. `G1 Z5`: Move up 5mm
-. `G30 S-1`: Probe without resetting the Z=0 pos
-. Read the Z height from the web interface. That is the trigger height.
-
-==== Probing
-
-.Probing commands
-|===
-| M558 Pnnn Fnnn Hnnn Innn Rnnn Tnnn Annn Snnn Cn | Set Z-probe type 
-| G31 Znnn | Set Z-probe trigger height to _Znnn_ 
-| G30 Pnnn Xnnn Ynn Znnn Hnnn Snnn |  Single Z-probe
-|===
-
-.Defining the probe type M558
-|===
-| M558 P0 | Manual probe
-| M558 P4 I1 F100 H2 | Touch probe
-|===
 
 
 . *Important*: Move to your XYZ zero and run `G92 X0 Y0 Z0`. This resets the machine coordinates, which are used by the mesh compensation. Unfortunately it does not use the work coordinates. This is important, otherwise you will crash your router when it tries to go below your waste board where the Z zero position normally is.
@@ -140,6 +130,17 @@ Trigger height is set with G31. Before using G31, M558 (Set Z probe type) must b
 *** `Pnn` Number of points 
 . Move to center, do `G3`, to establish Z=0
 . `G29`: Start probing
+
+== Laser
+
+The Opt Lasers documentation suggests connecting the laser PWM signal to the heater3 pin, pin 8 on the expansion, which corresponds to P3 in the M452 command.
+
+.Laser commands
+|===
+| M452 P3 | Set to laser mode on P3 using the default parameters
+| M3 | Laser on
+| M5 | Laser off
+|===
 
 == Custom changes 
 
