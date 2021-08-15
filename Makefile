@@ -1,4 +1,4 @@
-SUBDIRS = arduino cnc dcs go keyboard music usb vr
+SUBDIRS = arduino cnc dcs go keyboard linux music usb vr
 
 all: index.html $(SUBDIRS)
 

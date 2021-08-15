@@ -1,0 +1,55 @@
+= Creating an info display
+
+This page contains tips on how to create an info display using Linux: How to autologin and start a browser in full screen.
+
+The browser will run as user `infoscreen` and display the web page http://192.168.71.3/info.html.
+
+* Create a user named `infoscreen` and make the user's shell `/home/infoscreen/infoscreen`.
+
+* Edit `/etc/systemd/system/autologin.service`:
++
+[code]
+----
+ExecStart=-/sbin/agetty --noclear -a infoscreen tty1 $TERM
+----
+* Edit `/home/infoscreen/.xinitrc`:
++
+[code]
+----
+/usr/bin/unclutter &
+exec /usr/bin/chromium --start-maximized --kiosk http://192.168.71.3/info.html
+----
++
+unclutter will remove the cursor.
+
+* To avoid Chromium asking question at start up, modify `$HOME/.config/chromium/Default/Preferences` when running the user's "shell" `/home/infoscree/infoscreen`. Also start X Window without screen saver features.
++
+[code]
+----
+sed -i 's/exit_type":"Crashed/exit_type":"None/; s/exited_cleanly":false/exited_cleanly":true/' $HOME/.config/chromium/Default/Preferences
+startx -- -dpms -s 0
+----
+* Edit Chromium's settings so the window will be placed in the correct location and with the right size. Here I'm using an full HD display. Set the following in `.config/chromium/Default/Preferences`:
++
+[code,json]
+----
+"browser": {
+	"window_placement": {
+		"maximized": true,
+		"bottom": 1080,
+		"left": 0,
+		"right": 1920,
+		"top": 0,
+		"work_area_bottom": 1080,
+		"work_area_left": 0,
+		"work_area_right": 1920,
+		"work_area_top": 0
+	}
+}
+----
+
+I'm using an old FitPC where I had to set the following in `/etc/default/grub`:
+[code]
+----
+GRUB_CMDLINE_LINUX_DEFAULT="video=LVDS-1:d"
+----
