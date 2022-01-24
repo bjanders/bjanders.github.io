@@ -1,6 +1,9 @@
 SUBDIRS = neutron
 
-all: $(SUBDIRS)
+all: modular.html $(SUBDIRS)
+
+%.html: %.adoc
+	asciidoctor $<
 
 subdirs: $(SUBDIRS)
 

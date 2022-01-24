@@ -5,6 +5,7 @@
 * https://www.usb.org/document-library/hid-descriptor-tool[HID Descriptor Tool]
 * https://beyondlogic.org/usbnutshell/usb1.shtml[USB in a NutShell]
 * https://www.usbmadesimple.co.uk/ums_1.htm[USB Made Simple]
+* https://pid.codes/
 
 == Arduino related
 

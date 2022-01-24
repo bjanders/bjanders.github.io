@@ -1,6 +1,6 @@
 = CNC
 
-See also my notes on using the <<workbee.adoc,Ooznest WorkBee>>.
+See also my notes on using the link:workbee.html[Ooznest WorkBee].
 
 == Makita RT0700C
 
@@ -46,4 +46,3 @@ Cutting 3mm per depth works well.
 * 10000 RPM
 * Feed rate 920 mm/min
 * Feed per tooth 0.046 mm
-

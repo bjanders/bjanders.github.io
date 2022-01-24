@@ -1,0 +1,5 @@
+= Modular Synths
+
+== Open Source designs
+
+* https://github.com/pichenettes/eurorack[Mutable Instruments modules]

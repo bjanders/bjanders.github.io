@@ -40,9 +40,10 @@ display on the panels. Documentation is still a bit lacking unfortunately.
 
 === Kneeboards
 
-The format should be JPG or PNG and the size should be 768 x 1024 or 680 x 1024 pixels.
+The format should be JPG or PNG and the size should be 1024x680 or 1024x768 pixels.
 
 Kneeboards are placed in the following locations:
+
 * C:\Users\<User Name>\Saved Games\DCS\Kneeboard
 * C:\Users\<User Name>\Saved Games\DCS\Kneeboard\A-10C
 
@@ -56,13 +57,12 @@ mutool.exe convert -o Ka-50-%d.png -F png -O width=768,height=1024 Ka-50_checkli
 I create my checklists in https://www.libreoffice.org/[LibreOffice] Calc, export the sheets to PDF with pages in 3:4 ratio (18x24 cm), and then convert to PNGs with the above command.
 
 Links:
-* http://www.dcskneeboardbuilder.com/[Kneeboard Builder] (Seems to have license issues)
+
+* http://www.dcskneeboardbuilder.com/[Kneeboard Builder] (Seems to violate open source license)
 * https://www.airgoons.com/w/Digital_Combat_Simulator
+
 
 === Other
 
 * DemoMods
 * VR mouse
-
-=== Links
-

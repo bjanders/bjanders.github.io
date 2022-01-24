@@ -25,7 +25,7 @@
 
 | X  | 0? | X-axis
 | Y  | 1? | Y-axis
-| Z  | 2? | Z-axis 
+| Z  | 2? | Z-axis
 | E0 | 3 | Optional touch probe
 | E1 | 4 | Optional emergency stop
 |===
@@ -68,7 +68,7 @@ Initially coordinate system 1 is in use, which is the work coordinate system sho
 .Tool management commands
 |===
 | Tn                | Select tool _Tn_. T-1 removes all tools. The tool must be defined with M563 before it can be selected.
-| M563 Pn S"name"   | Define tool 
+| M563 Pn S"name"   | Define tool
 | G10 Pn Xx Yy Zz   | Set offset for tool _Pn_
 | M585 Xx Yy Zz En Ln Fn Sn Rn | Probe offset for current tool
 | G30 S-2           | Set Z offset of current tool to make the current position Z=0
@@ -93,8 +93,8 @@ When homing is perfmored the following scripts are run:
 
 .Probing commands
 |===
-| M558 Pnnn Fnnn Hnnn Innn Rnnn Tnnn Annn Snnn Cn | Set Z-probe type 
-| G31 Znnn | Set Z-probe trigger height to _Znnn_ 
+| M558 Pnnn Fnnn Hnnn Innn Rnnn Tnnn Annn Snnn Cn | Set Z-probe type
+| G31 Znnn | Set Z-probe trigger height to _Znnn_
 | G30 Pnnn Xnnn Ynn Znnn Hnnn Snnn |  Single Z-probe. Sets the _machine Z-origin_.
 |===
 
@@ -117,7 +117,7 @@ Trigger height is set with G31. Before using G31, M558 (Set Z probe type) must b
 . `M558` Set Z probe type:
 .. Manual probing: `M558 P0 [Hnnn]`
 *** `P0`: No probe present. You will be promted to manually move the router until it touches your material
-*** `Hnnn` Possibly set dive height in mm, e.g., H2 is 2mm 
+*** `Hnnn` Possibly set dive height in mm, e.g., H2 is 2mm
 .. Touch probe: `M558 P4 I1 F100 H2` (100 mm/min)
 *** `P4`: selects a switch for bed probing, default 3 (set with `C`) which is endstop E0 on the Duet
 *** `I1`: Invert reading
@@ -127,7 +127,7 @@ Trigger height is set with G31. Before using G31, M558 (Set Z probe type) must b
 . `M557` Define mesh size and spacing
 .. `M557` Xaaa:bbb Yaaa:bbb Pnn
 *** `aaa:bbb` min:max
-*** `Pnn` Number of points 
+*** `Pnn` Number of points
 . Move to center, do `G3`, to establish Z=0
 . `G29`: Start probing
 
@@ -142,7 +142,7 @@ The Opt Lasers documentation suggests connecting the laser PWM signal to the hea
 | M5 | Laser off
 |===
 
-== Custom changes 
+== Custom changes
 
 
 Reduce Z max height so that your router wihtout a tool can't hit the waste board.
@@ -172,7 +172,3 @@ In `workzero.g` remove the go the Z zero position. It is way too easy to hit the
 G1 H1 Z1500 F1500 ; raise the Z to the highest position
 G1 X0 Y0 F1500 ; go directly above the work zero position
 ----
-
-== Errors on Gcode page
-
-*  "This code works similarly to G1 .. S1" 

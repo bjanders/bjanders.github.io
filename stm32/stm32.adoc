@@ -1,0 +1,49 @@
+[STM32Cube initialization code generator]https://www.st.com/en/development-tools/stm32cubemx.html
+
+Generate Makefile project
+
+STM32CubeProgrammer software for all STM32[https://www.st.com/en/development-tools/stm32cubeprog.html]
+
+
+Install MSYS2
+pacman -S mingw32/mingw-w64-i686-arm-none-eabi-gcc
+
+After this you can run 'make'
+Flash with CubeProgrammer
+
+
+------
+
+
+STM32CubeMonitor
+Monitoring tool to test STM32 applications at run-time
+
+https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-performance-and-debuggers/stm32cubemonitor.html
+
+
+------
+
+https://www.st.com/en/embedded-software.html
+
+
+https://github.com/STMicroelectronics
+
+Firmware packages:
+https://github.com/STMicroelectronics/STM32CubeL4
+
+----
+
+Terms:
+RCC: Reset and Clock Control
+SMPS: Switched Mode Power Supply
+SWD: Serial Wire Debug
+SWIM: Single Wire Interface Module
+TSC: Touch Sensing Controller
+
+USB:
+SOF: Start Of Frame
+
+
+----
+Links:
+* [STM32-base]https://stm32-base.org

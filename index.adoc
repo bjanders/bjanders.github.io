@@ -2,5 +2,6 @@
 
 * link:dcs/dcs.html[Digital Combat Simulator related stuff]
 * link:cnc/cnc.html[CNC]
+* link:music/modular.html[Modular Synths]
 * link:music/neutron/neutron.html[Behringer Neutron]
 * link:usb/usb.html[USB]
